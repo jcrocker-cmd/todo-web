@@ -20,8 +20,17 @@ use App\Http\Controllers\ContactController;
 // Route::resource('/', ContactController::class);
 // Route::resource('/', StudentController::class);
 
-Route::get('/', function () {
-    return view('contacts.click');
-});
+// Route::get('/', function () {
+//     return view('contacts.click');
+// });
 
-Route::resource('/task', ContactController::class);
+// Route::resource('/', ContactController::class);
+
+Route::get('/', [ContactController::class,'index']);
+Route::get('/create', [ContactController::class,'create']);
+Route::get('/show/{id}', [ContactController::class,'show']);
+Route::get('/{id}/edit', [ContactController::class,'edit']);
+Route::post('/store', [ContactController::class,'store']);
+Route::patch('/update/{id}', [ContactController::class,'update']);
+Route::delete('/destroy/{id}', [ContactController::class,'destroy']);
+

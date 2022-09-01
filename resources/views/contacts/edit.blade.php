@@ -5,12 +5,14 @@
   <div class="card-header">Edit a Task</div>
   <div class="card-body">
       
-      <form action="{{ url('task/' .$contacts->id) }}" method="post">
+      <form action="{{ url('update/' .$contacts->id) }}" method="post">
         {!! csrf_field() !!}
         @method("PATCH")
         <input type="hidden" name="id" id="id" value="{{$contacts->id}}" id="id" />
         <label>Description</label></br>
         <input type="text" name="name" id="name" value="{{$contacts->name}}" class="form-control"></br>
+        <label>Time</label></br>
+        <input type="time" name="time" id="time" value="{{$contacts->time}}" class="form-control"></br>
         <input type="submit" value="Update" class="btn btn-success"></br>
     </form>
   

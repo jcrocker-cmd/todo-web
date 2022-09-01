@@ -25,7 +25,7 @@ class ContactController extends Controller
     {
         $input = $request->all();
         Contact::create($input);
-        return redirect('task')->with('flash_message', 'Contact Addedd!');  
+        return redirect('/')->with('flash_message', 'Contact Addedd!');  
     }
  
     
@@ -48,13 +48,13 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         $input = $request->all();
         $contact->update($input);
-        return redirect('task')->with('flash_message', 'Contact Updated!');  
+        return redirect('/')->with('flash_message', 'Contact Updated!');  
     }
  
   
     public function destroy($id)
     {
         Contact::destroy($id);
-        return redirect('task')->with('flash_message', 'Contact deleted!');  
+        return redirect('/')->with('flash_message', 'Contact deleted!');  
     }
 }

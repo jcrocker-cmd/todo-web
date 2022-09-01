@@ -25,3 +25,8 @@ down:
 
 keygen:
 	./vendor/bin/sail php artisan key:generate
+init:
+	make env
+    make up
+	make migrate
+	make keygen
